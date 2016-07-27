@@ -1,20 +1,23 @@
 <html>
 <head>
 <script src="/js/jquery.js"></script>
-<script src="/js/looper.js"></script>
+<script type="text/javascript" src="/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/keijiban.css">
-<link rel="stylesheet" type="text/css" href="/css/looper.css">
+<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 <body>
-<div class="looper xfade">
-  <div class="looper-inner">
+<div class="looper">
     <%= slides %>
-  </div>
 </div>
 <script>
 $("h1").each(function() { $(this).nextUntil("h1").addBack().wrapAll("<div class=\"item\"></div>") })
-$('div.item').first().addClass("active");
-$('.looper').looper({interval: 10000});
+$('.looper').slick({
+  autoplay: true,
+  autoplaySpeed: 10000,
+  fade: true,
+  cssEase: 'linear'
+})
 </script>
 </body>
 </html>
