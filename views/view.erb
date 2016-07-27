@@ -3,6 +3,7 @@
 <script src="/js/jquery.js"></script>
 <script type="text/javascript" src="/slick/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/keijiban.css">
+<link rel="stylesheet" type="text/css" href="/css/user.css">
 <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
@@ -11,13 +12,15 @@
     <%= slides %>
 </div>
 <script>
-$("h1").each(function() { $(this).nextUntil("h1").addBack().wrapAll("<div class=\"item\"></div>") })
-$('.looper').slick({
-  autoplay: true,
-  autoplaySpeed: 10000,
-  fade: true,
-  cssEase: 'linear'
-})
+$(function() {
+  $("h1").each(function() { $(this).nextUntil("h1").addBack().wrapAll("<div class=\"item\"></div>") })
+  $('.looper').slick({
+    autoplay: true,
+    autoplaySpeed: 8000,
+    fade: true,
+    cssEase: 'linear'
+  })
+});
 </script>
 </body>
 </html>
