@@ -1,0 +1,13 @@
+html { 
+  background: black;
+  color: white;
+  font-family: "Myriad Pro";
+  text-align: center;
+  font-size: 25pt;
+  margin:40pt;
+  word-spacing: 105%;
+}
+
+ul { text-align:left; }
+li { padding-bottom: 20pt; }
+p { line-height: 2em }
