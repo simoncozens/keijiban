@@ -16,7 +16,10 @@ $(function() {
   $("h1").each(function() { $(this).nextUntil("h1").addBack().wrapAll("<div class=\"item\"></div>") })
   $('.looper').slick({
     autoplay: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 12000,
+    speed: 600,
+    pauseOnHover: false,
+    pauseOnFocus: false,
     fade: true,
     cssEase: 'linear'
   })
