@@ -1,14 +1,56 @@
 <html>
 <head>
 <script src="/js/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="/pagedown-bootstrap/Markdown.Converter.js"></script>
+    <script type="text/javascript" src="/pagedown-bootstrap/Markdown.Sanitizer.js"></script>
+    <script type="text/javascript" src="/pagedown-bootstrap/Markdown.Editor.js"></script>
+<link rel="stylesheet" type="text/css" href="/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/edit.css">
-
+<link rel="stylesheet" type="text/css" href="/pagedown-bootstrap/Markdown.Editor.less">
 </head>
 <body>
-<form method="post">
-<textarea name="slides"><%= slides %>
-</textarea>
-<input type="submit" name="Edit" value="Edit">
-</form>
+
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Keijiban</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+      <form method="post">
+      <div class="wmd-panel">
+        <div id="wmd-button-bar"></div>
+        <textarea class="wmd-input" id="wmd-input" name="slides"><%= slides %>
+        </textarea>
+      </div>
+      <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+
+      <input type="submit" name="Edit" value="Save">
+      </form>
+    </div>
+<script>
+        $(function () {
+
+            var converter1 = Markdown.getSanitizingConverter();
+            var editor1 = new Markdown.Editor(converter1);
+            editor1.run();
+        });
+</script>
 </body>
+
 </html>

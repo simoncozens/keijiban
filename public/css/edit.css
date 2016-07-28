@@ -1,6 +1,7 @@
 html { 
   text-align: center;
   font-size: 25pt;
+  background-color: white;
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
-textarea {width:80%; height:80%;}
